@@ -102,3 +102,32 @@ header {
     font-size: 20px;
     border: none;
 }
+.fenetre-cachee {
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+
+.paiement {
+
+    background:white;
+    width:350px;
+    padding:25px;
+    margin:100px auto;
+    text-align:center;
+
+}
+
+
+.paiement button {
+
+    width:100%;
+    padding:15px;
+    margin:8px;
+
+}
