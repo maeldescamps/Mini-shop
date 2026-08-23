@@ -1,1 +1,104 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
+body {
+    margin: 0;
+    background: #e9e9e9;
+}
+
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+
+/* MENU GAUCHE */
+
+.menu {
+    width: 220px;
+    background: #1f2937;
+    color: white;
+    padding: 20px;
+}
+
+.menu h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.menu button {
+    width: 100%;
+    padding: 15px;
+    margin: 8px 0;
+    border: none;
+    background: #374151;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* ZONE CAISSE */
+
+.caisse {
+    flex: 1;
+    padding: 25px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.zone-recherche {
+    margin: 20px 0;
+    display: flex;
+}
+
+.zone-recherche input {
+    flex: 1;
+    padding: 15px;
+    font-size: 16px;
+}
+
+.zone-recherche button {
+    padding: 15px;
+}
+
+
+/* PRODUITS */
+
+.produits {
+    background: white;
+    padding: 20px;
+}
+
+.produit {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+
+/* PANIER */
+
+.panier {
+    width: 320px;
+    background: white;
+    padding: 20px;
+    border-left: 1px solid #ccc;
+}
+
+
+.payer {
+    width: 100%;
+    padding: 20px;
+    background: black;
+    color: white;
+    font-size: 20px;
+    border: none;
+}
