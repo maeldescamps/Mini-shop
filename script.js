@@ -107,3 +107,49 @@ function supprimerArticle(index){
     afficherPanier();
 
 }
+function ouvrirPaiement(){
+
+    document.getElementById("fenetrePaiement").style.display="block";
+
+    document.getElementById("totalPaiement").textContent =
+    affichageTotal.textContent;
+
+}
+
+
+
+function fermerPaiement(){
+
+    document.getElementById("fenetrePaiement").style.display="none";
+
+}
+
+
+
+function payer(moyen){
+
+    let ticket =
+    `
+    MINI SHOP 🛒
+    
+    Ticket #000001
+
+    Total :
+    ${affichageTotal.textContent} €
+
+    Paiement :
+    ${moyen}
+
+    Merci de votre visite !
+    `;
+
+
+    alert(ticket);
+
+
+    panier=[];
+    afficherPanier();
+
+    fermerPaiement();
+
+}
