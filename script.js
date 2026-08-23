@@ -1,6 +1,4 @@
 let panier = [];
-let total = 0;
-
 
 const boutonsProduits = document.querySelectorAll(".produit");
 const listePanier = document.getElementById("liste-panier");
@@ -14,39 +12,83 @@ boutonsProduits.forEach(bouton => {
         let texte = bouton.innerText;
 
         let nom = texte.split(" - ")[0];
+
         let prix = parseFloat(
             texte.split(" - ")[1]
-                .replace("€", "")
+            .replace("€", "")
         );
 
 
-        panier.push({
-            nom: nom,
-            prix: prix
-        });
-
-
-        total += prix;
-
-        afficherPanier();
+        ajouterArticle(nom, prix);
 
     });
 
 });
 
 
-function afficherPanier() {
+function ajouterArticle(nom, prix) {
+
+    let articleExiste = panier.find(
+        article => article.nom === nom
+    );
+
+
+    if(articleExiste){
+
+        articleExiste.quantite++;
+
+    } else {
+
+        panier.push({
+            nom: nom,
+            prix: prix,
+            quantite: 1
+        });
+
+    }
+
+
+    afficherPanier();
+
+}
+
+
+
+function afficherPanier(){
 
     listePanier.innerHTML = "";
 
-    panier.forEach(article => {
+    let total = 0;
 
-        let ligne = document.createElement("p");
 
-        ligne.textContent =
-        article.nom + " - " + article.prix.toFixed(2) + " €";
+    panier.forEach((article,index)=>{
+
+        let sousTotal =
+        article.prix * article.quantite;
+
+
+        total += sousTotal;
+
+
+        let ligne = document.createElement("div");
+
+
+        ligne.innerHTML = `
+        <p>
+        ${article.nom}<br>
+        ${article.quantite} x ${article.prix.toFixed(2)} €
+        = ${sousTotal.toFixed(2)} €
+
+        <button onclick="supprimerArticle(${index})">
+        ❌
+        </button>
+
+        </p>
+        `;
+
 
         listePanier.appendChild(ligne);
+
 
     });
 
@@ -58,17 +100,10 @@ function afficherPanier() {
 
 
 
-// Affiche l'heure
+function supprimerArticle(index){
 
-function afficherHeure(){
+    panier.splice(index,1);
 
-    let maintenant = new Date();
-
-    document.getElementById("heure").textContent =
-    maintenant.toLocaleTimeString();
+    afficherPanier();
 
 }
-
-setInterval(afficherHeure,1000);
-
-afficherHeure();
