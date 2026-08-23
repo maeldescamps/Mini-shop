@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MiniShop - Finances</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="finances">
+
+
+<h1>💰 Finances MiniShop</h1>
+
+
+<div class="carte-finance">
+
+<h2>Compte du magasin</h2>
+
+<p>
+Solde actuel :
+<strong>
+<span id="solde">500.00</span> €
+</strong>
+</p>
+
+</div>
+
+
+
+
+<div class="actions">
+
+
+<h2>Ajouter une opération</h2>
+
+
+<input 
+id="montant"
+type="number"
+placeholder="Montant €">
+
+
+
+<input
+id="description"
+placeholder="Description">
+
+
+
+<button onclick="ajouterRecette()">
+➕ Ajouter une entrée
+</button>
+
+
+<button onclick="ajouterDepense()">
+➖ Ajouter une dépense
+</button>
+
+
+
+</div>
+
+
+
+
+<div class="historique">
+
+
+<h2>Historique</h2>
+
+<div id="listeOperations">
+
+Aucune opération
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<script src="finances.js"></script>
+
+
+</body>
+
+</html>
