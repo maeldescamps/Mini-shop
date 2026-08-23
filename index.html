@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniShop - Caisse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<div class="app">
+
+    <aside class="menu">
+        <h1>MiniShop</h1>
+
+        <button>Caisse</button>
+        <button>Clients</button>
+        <button>Produits</button>
+        <button>Stock</button>
+        <button>Tickets</button>
+        <button>Paramètres</button>
+    </aside>
+
+
+    <main class="caisse">
+
+        <header>
+            <h2>Caisse 01</h2>
+            <p id="heure"></p>
+        </header>
+
+
+        <section class="zone-recherche">
+            <input type="text" placeholder="Scanner ou entrer un code-barres">
+            <button>Rechercher</button>
+        </section>
+
+
+        <section class="produits">
+            <h3>Articles</h3>
+
+            <button class="produit">
+                Bouteille eau 1,5L - 0,80 €
+            </button>
+
+            <button class="produit">
+                Bonbons - 1,20 €
+            </button>
+
+            <button class="produit">
+                Jus - 1,50 €
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <aside class="panier">
+
+        <h2>Panier</h2>
+
+        <div id="liste-panier">
+            Aucun article
+        </div>
+
+        <hr>
+
+        <h2>Total : <span id="total">0.00</span> €</h2>
+
+        <button class="payer">
+            PAYER
+        </button>
+
+    </aside>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
