@@ -1,85 +1,228 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>MiniShop - Caisse</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
+
 
 <div class="app">
 
+
+    <!-- MENU -->
+
     <aside class="menu">
+
         <h1>MiniShop</h1>
 
         <button>Caisse</button>
         <button>Clients</button>
         <button>Produits</button>
         <button>Stock</button>
+        <button>Promotions</button>
         <button>Tickets</button>
+        <button>Finances</button>
         <button>Paramètres</button>
+
     </aside>
 
 
+
+
+    <!-- CAISSE -->
+
     <main class="caisse">
 
+
         <header>
+
             <h2>Caisse 01</h2>
+
             <p id="heure"></p>
+
         </header>
 
 
+
+
+        <!-- RECHERCHE CODE BARRE -->
+
         <section class="zone-recherche">
-            <input type="text" placeholder="Scanner ou entrer un code-barres">
-            <button>Rechercher</button>
+
+            <input 
+            type="text" 
+            placeholder="Scanner ou entrer un code-barres">
+
+            <button>
+                🔎 Rechercher
+            </button>
+
         </section>
 
+
+
+
+
+        <!-- PRODUITS TEST -->
 
         <section class="produits">
-            <h3>Articles</h3>
+
+
+            <h3>Articles rapides</h3>
+
+
 
             <button class="produit">
-                Bouteille eau 1,5L - 0,80 €
+                Bouteille eau 1,5L - 0.80 €
             </button>
 
-            <button class="produit">
-                Bonbons - 1,20 €
-            </button>
 
             <button class="produit">
-                Jus - 1,50 €
+                Bonbons - 1.20 €
             </button>
+
+
+            <button class="produit">
+                Jus - 1.50 €
+            </button>
+
+
 
         </section>
+
 
     </main>
 
 
+
+
+
+    <!-- PANIER -->
+
+
     <aside class="panier">
+
 
         <h2>Panier</h2>
 
+
         <div id="liste-panier">
+
             Aucun article
+
         </div>
+
+
 
         <hr>
 
-        <h2>Total : <span id="total">0.00</span> €</h2>
 
-        <button class="payer">
-            PAYER
+
+        <h2>
+            Total :
+            <span id="total">
+                0.00
+            </span>
+            €
+        </h2>
+
+
+
+        <button 
+        class="payer" 
+        onclick="ouvrirPaiement()">
+
+            💳 PAYER
+
         </button>
 
+
+
     </aside>
+
+
+
 
 
 </div>
 
 
+
+
+
+
+<!-- FENETRE PAIEMENT -->
+
+
+<div id="fenetrePaiement" class="fenetre-cachee">
+
+
+    <div class="paiement">
+
+
+        <h2>Paiement</h2>
+
+
+
+        <p>
+            Total :
+            <span id="totalPaiement">
+                0.00
+            </span>
+            €
+        </p>
+
+
+
+
+        <button onclick="payer('Carte bancaire')">
+            💳 Carte bancaire
+        </button>
+
+
+
+        <button onclick="payer('Espèces')">
+            💶 Espèces
+        </button>
+
+
+
+        <button onclick="payer('Carte fidélité')">
+            🎫 Carte fidélité
+        </button>
+
+
+
+
+        <button onclick="fermerPaiement()">
+
+            ❌ Annuler
+
+        </button>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
